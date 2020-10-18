@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Father {
+            constructor(x, y) {
+                this.x = x
+                this.y = y
+            }
+            sayHai() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father {
+            constructor(x,y) {
+
+                super(x, y)
+
+                this.x = x
+                this.y = y
+                
+            }
+            attr(){
+                console.log(son1.sayHai() + (this.x - this.y));
+            }
+        }
+
+        var son1 = new Son(1, 2)
+        var son2 = new Son(3, 2)
+        son1.sayHai()
+        son2.sayHai()
+        son2.attr()
+
+
+    </script>
+</body>
+
+</html>
