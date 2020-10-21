@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+
+
+
+        var o = {
+            name: '这个是O'
+
+        }
+        function fn(a, b) {
+
+            console.log(this);
+            console.log(a + b);
+        }
+        var f = fn.bind(o, 1, 2)
+        f()
+
+
+        /*  var btn = document.querySelector('button')
+ 
+         btn.onclick = function(){
+             this.disabled = true
+             setTimeout( function() {
+                 this.disabled = false
+             }.bind(this), 2000);
+         } */
+
+
+        var btns = document.querySelectorAll('button')
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                this.disabled = true
+                setTimeout(function () {
+                    this.disabled = false
+                }.bind(this), 2000);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

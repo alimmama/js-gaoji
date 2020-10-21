@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Father(name,age){
+            this.name = name
+            this.age = age
+        }
+        Father.prototype.money=function(){
+            console.log('发工资200000');
+        }
+
+
+
+        function Son (name,age,score){
+            Father.call(this,name,age)
+            this.score = score
+        }
+        Son.prototype.exam=function(){
+            console.log('孩子考试');
+        }
+
+
+        Son.prototype = new Father()
+        Son.prototype.construction = Son
+
+
+        var son = new Son('刘德华',18,100)
+        console.log(son);
+        console.log(Son.prototype.money);
+        console.log(son.exam);
+        console.log(Father.prototype);
+
+
+
+
+
+    </script>
+</body>
+</html>
