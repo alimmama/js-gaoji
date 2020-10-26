@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+        <li>321</li>
+        <li>147</li>
+        <li>852</li>
+        <li>963</li>
+    </ul>
+    <script>
+
+        var lis = document.querySelectorAll('li')
+
+        for (var i = 0; i < lis.length; i++) {
+
+            (function (j) {
+                setTimeout(function () {
+                    console.log(lis[j].innerHTML);
+                }, 3000);
+            })(i)
+
+        }
+
+        for (var i = 0; i < lis.length; i++) {
+
+            (function (j) {
+                lis[i].onclick = function () {
+                    console.log(j);
+                }
+            })(i)
+
+        }
+
+
+
+        (function () {
+            var m = 0
+            function getM() {
+                return m
+            }
+            function seta(val) {
+                m = val
+            }
+            window.g = getM
+            window.f = seta
+            // console.log(window.f);
+        })()
+        f(100)
+        console.log(g()) 
+       
+
+    </script>
+</body>
+
+</html>
